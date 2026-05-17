@@ -30,7 +30,7 @@ export function createBot(
   });
 
   client.on(Events.MessageCreate, async (message) => {
-    if (!shouldHandle(message.author.bot, message.channelId, channelId)) return;
+if (!shouldHandle(message.author.bot, message.channelId, channelId)) return;
 
     const roast = await roastPrompt(anthropic, message.content);
     await message.reply(roast);
